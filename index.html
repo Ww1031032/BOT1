@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GOW競爭者團隊</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <script src="https://unpkg.com/typed.js@2.0.12"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: white;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    .glass {
+      backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    canvas#particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    .floating-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #06b6d4;
+      padding: 12px 20px;
+      border-radius: 9999px;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 4px 20px rgba(0,255,255,0.4);
+      z-index: 50;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    section {
+      padding: 60px 24px;
+      max-width: 1000px;
+      margin: auto;
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    button.back-btn {
+      margin-bottom: 24px;
+      padding: 8px 16px;
+      background-color: #06b6d4;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #06b6d4;
+      text-decoration: none;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white;
+      resize: vertical;
+      font-size: 1rem;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    input::placeholder, textarea::placeholder {
+      color: rgba(255,255,255,0.6);
+    }
+    button.submit-btn {
+      background-color: #06b6d4;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button.submit-btn:hover {
+      background-color: #0ea5e9;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="particles-js"></canvas>
+
+<!-- 首頁 -->
+<section id="homePage" class="active glass rounded-2xl p-10 my-12">
+  <div style="text-align:center;">
+    <img src="https://i.pinimg.com/736x/39/d5/59/39d559c8324651510da4b4afaa4ebc06.jpg" alt="Logo" style="width:96px;height:96px;border-radius:50%;margin-bottom:16px;">
+    <h1 class="text-4xl font-bold mb-4 text-cyan-400 typed"></h1>
+    <p style="max-width:600px;margin:auto;margin-bottom:20px;opacity:0.7;">
+      來我們GOW讓你天天都能看到語音房有人 我們人員好 可是會起不定時起爭執 我們機器人都很齊全
+    </p>
+    <a href="https://discord.gg/A8X9SJrXew" target="_blank" style="display:inline-block;background:#06b6d4;color:white;padding:12px 30px;border-radius:9999px;text-decoration:none;font-weight:bold;transition:background-color 0.3s;">
+      立即加入
+    </a>
+  </div>
+
+  <h2 style="text-align:center;margin:60px 0 24px 0;font-size:2rem;font-weight:bold;">🌈 功能特色</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:700px;margin:auto;">
+    <div class="glass p-6 rounded-xl" style="text-align:center;line-height:1.5;">🤖<br>機器人齊全</div>
+    <div class="glass p-6 rounded-xl" style="text-align:center;line-height:1.5;">🔞<br>18禁區</div>
+    <div class="glass p-6 rounded-xl" style="text-align:center;line-height:1.5;">👥<br>人員非常好</div>
+    <div class="glass p-6 rounded-xl" style="text-align:center;line-height:1.5;">😎<br>團長是帥哥</div>
+  </div>
+
+  <h2 style="text-align:center;margin:60px 0 24px 0;font-size:2rem;font-weight:bold;">❓ 常見問題</h2>
+  <div style="max-width:600px;margin:auto;opacity:0.8;">
+    <div class="glass p-5 rounded-xl" style="margin-bottom:20px;">
+      <h3 style="margin-bottom:8px;">如何加入我們的伺服器？</h3>
+      <p>點擊首頁「立即加入」按鈕即可加入！</p>
+    </div>
+    <div class="glass p-5 rounded-xl">
+      <h3 style="margin-bottom:8px;">是否需要年齡限制？</h3>
+      <p>我們有18禁區，需符合資格才可進入。</p>
+    </div>
+  </div>
+
+  <h2 style="text-align:center;margin:60px 0 24px 0;font-size:2rem;font-weight:bold;">💬 意見留言</h2>
+  <form id="feedbackForm" style="max-width:600px;margin:auto;display:flex;flex-direction:column;gap:16px;">
+    <input type="text" placeholder="你的名稱" required />
+    <textarea rows="4" placeholder="你的建議..." required></textarea>
+    <button type="submit" class="submit-btn">送出</button>
+  </form>
+</section>
+
+<!-- 團隊介紹頁 -->
+<section id="teamPage" class="glass rounded-2xl p-10 my-12">
+  <button class="back-btn" id="backBtn">← 上一頁</button>
+  <h2 style="text-align:center;margin-bottom:40px;font-size:2rem;font-weight:bold;">👑 團隊成員詳細介紹</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;max-width:700px;margin:auto;">
+    <div class="glass p-6 rounded-xl" style="text-align:center;line-height:1.5;">沙郎白子<br><small>看單神人阿</small></div>
+    <div class="glass p-6 rounded-xl" style="text-align:center;line-height:1.5;">肉球<br><small>團長</small></div>
+    <div class="glass p-6 rounded-xl" style="text-align:center;line-height:1.5;">Acd-4<br><small>副團長</small></div>
+    <div class="glass p-6 rounded-xl" style="text-align:center;line-height:1.5;">GOW_jay<br><small>管理員</small></div>
+  </div>
+</section>
+
+<!-- 右下角浮動按鈕 -->
+<a href="#" id="joinBtn" class="floating-btn">加入我們</a>
+
+<footer>
+  <p>© 2025 GOW競爭者團隊 | <a href="https://discord.gg/A8X9SJrXew" target="_blank">Discord 連結</a></p>
+  <p id="taiwanTime" style="font-family: monospace; margin-top:8px;"></p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+  // 打字機效果
+  new Typed('.typed', {
+    strings: ['歡迎來到 GOW競爭者團隊'],
+    typeSpeed: 50,
+    backSpeed: 30,
+    loop: true
+  });
+
+  // 粒子背景
+  particlesJS('particles-js', {
+    "particles": {
+      "number": { "value": 80 },
+      "color": { "value": "#00ffff" },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.5 },
+      "size": { "value": 3 },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#00ffff",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": { "enable": true, "speed": 3 }
+    },
+    "interactivity": {
+      "events": {
+        "onhover": { "enable": true, "mode": "repulse" },
+        "onclick": { "enable": true, "mode": "push" }
+      }
+    }
+  });
+
+  // 台灣時間顯示
+  function updateTaiwanTime() {
+    const now = new Date();
+    const taiwanOffset = 8 * 60;
+    const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+    const taiwanTime = new Date(utc + taiwanOffset * 60000);
+
+    const y = taiwanTime.getFullYear();
+    const m = String(taiwanTime.getMonth() + 1).padStart(2, '0');
+    const d = String(taiwanTime.getDate()).padStart(2, '0');
+    const h = String(taiwanTime.getHours()).padStart(2, '0');
+    const min = String(taiwanTime.getMinutes()).padStart(2, '0');
+    const s = String(taiwanTime.getSeconds()).padStart(2, '0');
+
+    const timeStr = `臺灣時間：${y}-${m}-${d} ${h}:${min}:${s}`;
+    document.getElementById('taiwanTime').textContent = timeStr;
+  }
+  setInterval(updateTaiwanTime, 1000);
+  updateTaiwanTime();
+
+  // 頁面切換控制
+  const homePage = document.getElementById('homePage');
+  const teamPage = document.getElementById('teamPage');
+  const joinBtn = document.getElementById('joinBtn');
+  const backBtn = document.getElementById('backBtn');
+
+  joinBtn.addEventListener('click', e => {
+    e.preventDefault();
+    homePage.classList.remove('active');
+    teamPage.classList.add('active');
+  });
+
+  backBtn.addEventListener('click', () => {
+    teamPage.classList.remove('active');
+    homePage.classList.add('active');
+  });
+
+  // 留言表單送出示範（本地測試不會送出，未串後端）
+  const feedbackForm = document.getElementById('feedbackForm');
+  feedbackForm.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('謝謝你的建議！(此示範不會真實送出)');
+    feedbackForm.reset();
+  });
+</script>
+
+</body>
+</html>
